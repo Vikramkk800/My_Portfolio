@@ -1,39 +1,291 @@
-// File: pages/index.js
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Vikram KK | DevOps Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #ffffff;
+      color: #000000;
+      line-height: 1.6;
+    }
+    header, section {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 1s ease;
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    header.show, section.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    header {
+      text-align: center;
+    }
+    header img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #dddddd;
+      margin-bottom: 20px;
+    }
+    header h1 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    header p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      color: #000000;
+    }
+    header a {
+      text-decoration: none;
+      display: inline-block;
+      background: #0070f3;
+      color: #ffffff;
+      padding: 12px 30px;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: background 0.3s;
+    }
+    header a:hover {
+      background: #0059c1;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+      font-weight: 600;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 20px;
+    }
+    .skill-item {
+      display: flex;
+      align-items: center;
+      background: #f9f9f9;
+      padding: 15px 20px;
+      border-radius: 8px;
+      font-size: 1rem;
+      color: #000000;
+      transition: all 0.3s ease;
+    }
+    .skill-item img {
+      width: 32px;
+      height: 32px;
+      margin-right: 15px;
+      flex-shrink: 0;
+      transition: transform 0.3s ease;
+    }
+    .skill-item:hover img {
+      transform: scale(1.2);
+    }
+    .skill-item:hover {
+      background: #f0f8ff;
+      transform: scale(1.02);
+    }
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    .project-card {
+      border: 1px solid #eeeeee;
+      padding: 20px;
+      border-radius: 10px;
+      transition: box-shadow 0.3s;
+      background: #ffffff;
+      color: #000000;
+    }
+    .project-card:hover {
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    }
+    .project-card h3 {
+      color: #0070f3;
+      margin-bottom: 10px;
+    }
+    .project-card p {
+      color: #000000;
+      font-size: 0.95rem;
+    }
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #0070f3;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    footer {
+      text-align: center;
+      padding: 40px 20px;
+      color: #999999;
+      font-size: 0.9rem;
+      border-top: 1px solid #eeeeee;
+    }
+    .social-links a {
+      margin: 0 10px;
+      color: #0070f3;
+      font-size: 1.5rem;
+      transition: color 0.3s;
+    }
+    .social-links a:hover {
+      color: #0059c1;
+    }
+  </style>
+</head>
+<body>
 
-import Image from 'next/image'
-import Link from 'next/link'
+  <header id="header">
+    <img src="profile.jpg" alt="Vikram KK" />
+    <h1>Vikram KK</h1>
+    <p>DevOps Engineer specialized in CI/CD, Kubernetes, Terraform, and Cloud Automation</p>
+    <a href="mailto:vikramkk800@gmail.com">Contact Me</a>
+  </header>
 
-export default function Home() {
-  return (
-    <main className="min-h-screen bg-black text-white px-6 py-12 flex flex-col items-center">
-      <div className="w-32 h-32 rounded-full overflow-hidden border-4 border-gray-700 mb-6">
-        <Image
-          src="/profile.jpg"
-          alt="Vikram KK"
-          width={128}
-          height={128}
-          className="object-cover"
-        />
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a DevOps Engineer with over 3 years of experience designing CI/CD pipelines,
+      automating infrastructure with Terraform, managing Kubernetes deployments, and
+      building reliable monitoring solutions. I’m passionate about creating seamless,
+      scalable, and secure systems that help businesses grow.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Skills & Tools</h2>
+    <div class="skills-grid">
+
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/amazonaws.svg" alt="AWS" style="filter: invert(37%) sepia(84%) saturate(749%) hue-rotate(358deg) brightness(101%) contrast(103%);" />
+        AWS (EC2, S3, IAM)
       </div>
 
-      <h1 className="text-4xl font-semibold mb-2 text-center">
-        Vikram KK
-      </h1>
-      <p className="text-lg text-gray-400 mb-8 text-center max-w-xl">
-        DevOps Engineer | CI/CD Automation | Cloud Infrastructure | Kubernetes | Terraform | AWS
-      </p>
-
-      <div className="flex space-x-4">
-        <Link href="/projects" className="bg-white text-black px-6 py-2 rounded-xl font-medium hover:bg-gray-200 transition">
-          View Projects
-        </Link>
-        <a
-          href="mailto:vikramkk800@gmail.com"
-          className="border border-gray-400 px-6 py-2 rounded-xl text-white hover:bg-gray-800 transition"
-        >
-          Contact Me
-        </a>
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/kubernetes.svg" alt="Kubernetes" style="filter: invert(35%) sepia(74%) saturate(4365%) hue-rotate(210deg) brightness(96%) contrast(101%);" />
+        Kubernetes (EKS)
       </div>
-    </main>
-  )
-}
+
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/terraform.svg" alt="Terraform" style="filter: invert(28%) sepia(49%) saturate(4728%) hue-rotate(259deg) brightness(91%) contrast(98%);" />
+        Terraform
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/ansible.svg" alt="Ansible" style="filter: invert(25%) sepia(99%) saturate(7496%) hue-rotate(356deg) brightness(94%) contrast(101%);" />
+        Ansible
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/jenkins.svg" alt="Jenkins" style="filter: invert(57%) sepia(75%) saturate(464%) hue-rotate(345deg) brightness(88%) contrast(89%);" />
+        Jenkins
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/docker.svg" alt="Docker" style="filter: invert(46%) sepia(61%) saturate(1591%) hue-rotate(190deg) brightness(96%) contrast(97%);" />
+        Docker
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/prometheus.svg" alt="Prometheus" style="filter: invert(48%) sepia(77%) saturate(5129%) hue-rotate(351deg) brightness(100%) contrast(104%);" />
+        Prometheus
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/grafana.svg" alt="Grafana" style="filter: invert(48%) sepia(90%) saturate(4065%) hue-rotate(7deg) brightness(100%) contrast(101%);" />
+        Grafana
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/helm.svg" alt="Helm" style="filter: invert(41%) sepia(24%) saturate(1510%) hue-rotate(178deg) brightness(96%) contrast(101%);" />
+        Helm
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/sonarqube.svg" alt="SonarQube" style="filter: invert(53%) sepia(27%) saturate(3279%) hue-rotate(186deg) brightness(95%) contrast(97%);" />
+        SonarQube
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/git.svg" alt="Git" style="filter: invert(46%) sepia(90%) saturate(3075%) hue-rotate(354deg) brightness(104%) contrast(102%);" />
+        Git
+      </div>
+
+      <div class="skill-item">
+        <img src="https://cdn.jsdelivr.net/npm/simple-icons@v11/icons/apachemaven.svg" alt="Maven" style="filter: invert(35%) sepia(80%) saturate(3928%) hue-rotate(350deg) brightness(91%) contrast(96%);" />
+        Maven
+      </div>
+
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>CI/CD Pipeline Automation</h3>
+        <p>Designed Jenkins pipelines integrated with SonarQube, Maven, Docker, and Helm for seamless Kubernetes deployments, reducing deployment time by 70%.</p>
+        <a href="#">View Code →</a>
+      </div>
+      <div class="project-card">
+        <h3>AWS Infrastructure as Code</h3>
+        <p>Automated AWS provisioning with Terraform, managing EC2, S3, IAM policies, and leveraged Ansible for zero-downtime configuration management.</p>
+        <a href="#">View Code →</a>
+      </div>
+      <div class="project-card">
+        <h3>Monitoring & Alerting Stack</h3>
+        <p>Implemented Prometheus and Grafana dashboards for real-time metrics, coupled with SNS and Slack notifications for proactive monitoring and reduced MTTR by 40%.</p>
+        <a href="#">View Code →</a>
+      </div>
+      <div class="project-card">
+        <h3>Secrets Management in Kubernetes</h3>
+        <p>Configured Kubernetes Secrets, ConfigMaps, and IAM roles for secure handling of sensitive data in production-grade environments.</p>
+        <a href="#">View Details →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Connect With Me</h2>
+    <div class="social-links">
+      <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/" target="_blank"><i class="fab fa-linkedin"></i></a>
+      <a href="mailto:vikramkk800@gmail.com"><i class="fas fa-envelope"></i></a>
+    </div>
+  </section>
+
+  <footer>
+    © 2025 Vikram KK. All rights reserved.
+  </footer>
+
+  <script>
+    function reveal() {
+      document.querySelectorAll('header, section').forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if (top < window.innerHeight - 100) {
+          section.classList.add('show');
+        }
+      });
+    }
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+  </script>
+
+</body>
+</html>
